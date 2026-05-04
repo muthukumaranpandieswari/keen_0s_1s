@@ -26,14 +26,21 @@ This repository is already linked to GitHub at `https://github.com/muthukumaranp
 
 A GitHub Actions workflow is included at `.github/workflows/deploy.yml`.
 
-This project now includes `gunicorn` in `requirements.txt`, which is required for Render production deployment.
+This project now includes `gunicorn` and `whitenoise` in `requirements.txt`, which are required for Render production deployment and static file serving.
 
 1. Create a Render account and a new Web Service.
 2. Connect the service to this GitHub repository.
 3. Add these GitHub repository secrets:
    - `RENDER_API_KEY`
    - `RENDER_SERVICE_ID`
-4. Push to `main` and GitHub Actions will trigger deployment.
+4. Set the Render build command to:
+
+```bash
+pip install -r requirements.txt
+python manage.py collectstatic --noinput
+```
+
+5. Push to `main` and GitHub Actions will trigger deployment.
 
 To push changes to GitHub:
 
