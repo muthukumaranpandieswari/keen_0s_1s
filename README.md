@@ -22,13 +22,24 @@ Open `http://127.0.0.1:8000/` in your browser.
 
 This repository is already linked to GitHub at `https://github.com/muthukumaranpandieswari/keen_0s_1s.git`.
 
+### Deploy with Render using GitHub Actions
+
+A GitHub Actions workflow is included at `.github/workflows/deploy.yml`.
+
+1. Create a Render account and a new Web Service.
+2. Connect the service to this GitHub repository.
+3. Add these GitHub repository secrets:
+   - `RENDER_API_KEY`
+   - `RENDER_SERVICE_ID`
+4. Push to `main` and GitHub Actions will trigger deployment.
+
 To push changes to GitHub:
 
 ```powershell
 cd "c:\Users\praveena\OneDrive\Desktop\Ai\keen_0s_1s"
 git add .
-git commit -m "Add Django freelancing updates website"
+git commit -m "Add Render deployment workflow"
 git push origin main
 ```
 
-> Note: GitHub Pages does not host Django apps directly. For full deployment, use a Python-capable host like Render, Railway, or PythonAnywhere and connect it to this GitHub repo.
+> Note: GitHub Pages cannot host a Django backend directly. The workflow above deploys the repo to Render, which supports Python/Django web apps.
