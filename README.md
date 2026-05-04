@@ -26,6 +26,8 @@ This repository is already linked to GitHub at `https://github.com/muthukumaranp
 
 A GitHub Actions workflow is included at `.github/workflows/deploy.yml`.
 
+This project now includes `gunicorn` in `requirements.txt`, which is required for Render production deployment.
+
 1. Create a Render account and a new Web Service.
 2. Connect the service to this GitHub repository.
 3. Add these GitHub repository secrets:
