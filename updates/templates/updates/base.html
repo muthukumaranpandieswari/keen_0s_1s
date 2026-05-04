@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ brand }}</title>
+    <link rel="stylesheet" href="{% static 'updates/css/style.css' %}">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="header">
+            <div class="logo">{{ brand }}</div>
+            <div class="subtitle">{{ tagline }}</div>
+        </header>
+        <main class="content">{% block content %}{% endblock %}</main>
+        <footer class="footer">Designed for hosting updates, no login required.</footer>
+    </div>
+</body>
+</html>

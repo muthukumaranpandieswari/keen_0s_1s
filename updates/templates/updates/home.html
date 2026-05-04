@@ -1,0 +1,20 @@
+{% extends 'updates/base.html' %}
+
+{% block content %}
+    <section class="hero">
+        <h1>Hosting updates by keen_to_basic_0s_1s</h1>
+        <p>Tracking your GitHub-hosted updates with a simple Django frontend and Python backend.</p>
+    </section>
+
+    <section class="updates-list">
+        {% for update in updates %}
+            <article class="update-card">
+                <time>{{ update.time }}</time>
+                <h2>{{ update.title }}</h2>
+                <p>{{ update.description }}</p>
+            </article>
+        {% empty %}
+            <p>No updates available yet. Check back soon.</p>
+        {% endfor %}
+    </section>
+{% endblock %}
